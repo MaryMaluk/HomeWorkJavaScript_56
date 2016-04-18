@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/task5-6js.css">
+	<script type="text/javascript">
+var timer;
+function start_timer()
+     {
+	 if (timer) clearInterval(timer);
+	 secs = 0;
+	 
+	 document.getElementById('timer').innerHTML = 'Время: '+ secs + ' сек.';
+	 timer = setInterval(
+	    function () {
+	     secs++;
+   		 document.getElementById('timer').innerHTML = 'Время: '+ secs + ' сек.';
+		 },
+		 10
+		 );
+		 
+		 
+		 }
+		 
+		 function stop_timer()
+     {		 
+	   if (timer) clearInterval(timer);	 
+		 }
+</script>
+</head>
+<body>
+<input type="button" name="" value="ПУСК"  onclick="start_timer()"/>
+<br>
+<br>
+<div id="timer"></div>
+<input type='button' onClick='stop_timer()' value='СТОП'>
+
+</body>
+</html>
